@@ -1,10 +1,13 @@
 import React from "react"
+import BannerHead from "./components/BannerHead"
+import MainTable from "./components/MainTable"
 
 function App() {
     return (
-        <>
-            <h5>Fullstack App</h5>
-        </>
+        <div className="container mx-auto p-6">
+         <BannerHead />
+         <MainTable />
+        </div>
       )
 }
 
