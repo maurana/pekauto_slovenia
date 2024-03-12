@@ -1,6 +1,6 @@
 import { Table } from 'flowbite-react';
 
-function MainTable() {
+export default function MainTable({data}) {
   return (
     <div className="mt-4 overflow-x-auto w-full">
       <Table hoverable>
@@ -14,6 +14,7 @@ function MainTable() {
           </Table.HeadCell>
         </Table.Head>
         <Table.Body className="divide-y">
+        {data != null ? (
           <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
             <Table.Cell>1</Table.Cell>
             <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
@@ -27,10 +28,9 @@ function MainTable() {
               </a>
             </Table.Cell>
           </Table.Row>
+          ) : null}
         </Table.Body>
       </Table>
     </div>
   )
 }
-
-export default MainTable

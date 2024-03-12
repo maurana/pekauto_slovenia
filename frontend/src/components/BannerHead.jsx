@@ -1,8 +1,7 @@
 import { Banner, Button, TextInput } from 'flowbite-react'
 import { BsPlusCircleDotted, BsSearch } from "react-icons/bs"
 
-
-function BannerHead() {
+export default function BannerHead() {
   return (
     <Banner>
       <div className="flex w-full flex-col justify-between rounded-lg border border-gray-100 bg-white p-4 shadow-sm dark:border-gray-600 dark:bg-gray-700 md:flex-row lg:max-w-7xl">
@@ -21,15 +20,10 @@ function BannerHead() {
           </p>
         </div>
         <div className="flex flex-shrink-0 items-center">
-          <TextInput id="search" type="number" rightIcon={BsSearch} placeholder="search.." className='mr-2'/>
+          <TextInput id="search" type="number" rightIcon={BsSearch} placeholder="vin number" className='mr-2'/>
           <Button href="#"><BsPlusCircleDotted className="h-4 w-4 mr-1" /> Add</Button>
-          {/* <Banner.CollapseButton color="gray" className="border-0 bg-transparent text-gray-500 dark:text-gray-400">
-            <BsPlusCircleDotted className="h-4 w-4" />
-          </Banner.CollapseButton> */}
         </div>
       </div>
     </Banner>
   )
 }
-
-export default BannerHead
