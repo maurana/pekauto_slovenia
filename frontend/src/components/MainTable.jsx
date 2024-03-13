@@ -7,11 +7,7 @@ export default function MainTable({data}) {
         <Table.Head>
           <Table.HeadCell>No</Table.HeadCell>
           <Table.HeadCell>Vin Number</Table.HeadCell>
-          <Table.HeadCell>Created</Table.HeadCell>
-          <Table.HeadCell>Updated</Table.HeadCell>
-          <Table.HeadCell>
-            <span className="sr-only">Edit</span>
-          </Table.HeadCell>
+          <Table.HeadCell>Created At</Table.HeadCell>
         </Table.Head>
         <Table.Body className="divide-y">
         {data != null ? data.map((val, idx) => {
@@ -22,12 +18,6 @@ export default function MainTable({data}) {
               {val.vin_number}
             </Table.Cell>
             <Table.Cell>{val.created_at}</Table.Cell>
-            <Table.Cell>{val.updated_at != null ? val.updated_at : "-"}</Table.Cell>
-            <Table.Cell>
-              <a href="#" className="font-medium text-cyan-600 hover:underline dark:text-cyan-500">
-                Edit
-              </a>
-            </Table.Cell>
             </Table.Row>
           )
         }) : null}

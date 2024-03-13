@@ -2,33 +2,20 @@ import React from 'react'
 import { Banner, Button, TextInput } from 'flowbite-react'
 import { BsPlusCircleDotted, BsSearch } from "react-icons/bs"
 import ModalForm from "./ModalForm"
+import API from '../utils/Api'
 
 export default function BannerHead() {
   const [openModal, setOpenModal] = React.useState(false)
   const [Place, setPlace] = React.useState([])
   const [Equipment, setEquipment] = React.useState([])
   const toggle = () => setOpenModal(p => !p)
+  const GetAllPlace = async () => setPlace(await API('place','GET'))
+  const GetAllEquipment = async () => setEquipment(await API('equipment','GET'))
 
   React.useEffect(() => {
     if (Object.keys(Place).length < 1) GetAllPlace()
     if (Object.keys(Equipment).length < 1) GetAllEquipment()
   }, [Place, Equipment])
-
-  const GetAllPlace = async () => {
-    await fetch('http://127.0.0.1:8000/api/v1/place', {
-      method: 'GET', headers: {'Content-Type': 'application/json'}})
-    .then(response => response.json())
-    .then(data => setPlace(data))
-    .catch(error => console.error(error));
-  }
-
-  const GetAllEquipment = async () => {
-    await fetch('http://127.0.0.1:8000/api/v1/equipment', {
-      method: 'GET', headers: {'Content-Type': 'application/json'}})
-    .then(response => response.json())
-    .then(data => setEquipment(data))
-    .catch(error => console.error(error));
-  }
 
   return (
     <>

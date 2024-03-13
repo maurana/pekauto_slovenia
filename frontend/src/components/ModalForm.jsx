@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, Select, Label, Modal, TextInput } from 'flowbite-react'
 import DatePicker from "react-datepicker";
+import API from '../utils/Api';
 import "react-datepicker/dist/react-datepicker.css";
 import "./../style/customdatepicker.css"
 
@@ -10,17 +11,12 @@ export default function ModalForm({open, toggle, place, equipment}) {
     const [Equipment, setEquipment] = React.useState('')
     const [Serial, setSerial] = React.useState('')
     const [Place, setPlace] = React.useState('')
-
+    const CreateVin = async (data) => await API('vin','GET', data)
 
     const handleSubmit = () => {
         let text = Version+Equipment+Year.getFullYear().toString().substr(-2)+'1'+Serial+Place
-        const data = {vin_number: text}
-       
-        // fetch('http://127.0.0.1:8000/api/v1/vin', {
-        // method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(data)})
-        // .then(response => response.json())
-        // .then(data => setData(data))
-        // .catch(error => console.error(error))
+        CreateVin({vin_number: text})
+        toggle()
     }
 
     const CustomInput = React.forwardRef(({ value, onClick, onChange }, ref) => (
@@ -80,13 +76,17 @@ export default function ModalForm({open, toggle, place, equipment}) {
                     <div className="mb-2 block">
                     <Label htmlFor="serial" value="Serial Number" />
                     </div>
-                    <TextInput id="serial" type="number" sizing="sm" maxLength={6} onChange={e => setSerial(e.target.value)}/>
+                    <TextInput id="serial" type="text" sizing="sm" maxLength={6} onChange={e => setSerial(e.target.value)} pattern="[0-9]{6}" onKeyPress={(event) => {
+                        if (!/[0-9]{6}/.test(event.key)) event.preventDefault()
+                    }}/>
                 </div>
                 <div>
                     <div className="mb-2 block">
                     <Label htmlFor="version" value="Version" />
                     </div>
-                    <TextInput id="version" type="text" sizing="sm" maxLength={3} onChange={e => setVersion(e.target.value)}/>
+                    <TextInput id="version" type="text" sizing="sm" maxLength={3} onChange={e => setVersion(e.target.value)} pattern="[0-9]{3}" onKeyPress={(event) => {
+                        if (!/[0-9]{3}/.test(event.key)) event.preventDefault()
+                    }}/>
                 </div>
             </div>
             <div className="flex justify-center gap-4 mt-5">
