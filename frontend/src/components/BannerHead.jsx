@@ -1,8 +1,37 @@
+import React from 'react'
 import { Banner, Button, TextInput } from 'flowbite-react'
 import { BsPlusCircleDotted, BsSearch } from "react-icons/bs"
+import ModalForm from "./ModalForm"
 
 export default function BannerHead() {
+  const [openModal, setOpenModal] = React.useState(false)
+  const [Place, setPlace] = React.useState([])
+  const [Equipment, setEquipment] = React.useState([])
+  const toggle = () => setOpenModal(p => !p)
+
+  React.useEffect(() => {
+    if (Object.keys(Place).length < 1) GetAllPlace()
+    if (Object.keys(Equipment).length < 1) GetAllEquipment()
+  }, [Place, Equipment])
+
+  const GetAllPlace = async () => {
+    await fetch('http://127.0.0.1:8000/api/v1/place', {
+      method: 'GET', headers: {'Content-Type': 'application/json'}})
+    .then(response => response.json())
+    .then(data => setPlace(data))
+    .catch(error => console.error(error));
+  }
+
+  const GetAllEquipment = async () => {
+    await fetch('http://127.0.0.1:8000/api/v1/equipment', {
+      method: 'GET', headers: {'Content-Type': 'application/json'}})
+    .then(response => response.json())
+    .then(data => setEquipment(data))
+    .catch(error => console.error(error));
+  }
+
   return (
+    <>
     <Banner>
       <div className="flex w-full flex-col justify-between rounded-lg border border-gray-100 bg-white p-4 shadow-sm dark:border-gray-600 dark:bg-gray-700 md:flex-row lg:max-w-7xl">
         <div className="mb-3 mr-4 flex flex-col items-start md:mb-0 md:flex-row md:items-center">
@@ -21,9 +50,13 @@ export default function BannerHead() {
         </div>
         <div className="flex flex-shrink-0 items-center">
           <TextInput id="search" type="number" rightIcon={BsSearch} placeholder="vin number" className='mr-2'/>
-          <Button href="#"><BsPlusCircleDotted className="h-4 w-4 mr-1" /> Add</Button>
+          <Button onClick={toggle}><BsPlusCircleDotted className="h-4 w-4 mr-1" /> Add</Button>
         </div>
       </div>
     </Banner>
+    <div>
+      <ModalForm open={openModal} toggle={toggle} place={Place} equipment={Equipment} />
+    </div>
+    </>
   )
 }

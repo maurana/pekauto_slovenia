@@ -19,7 +19,7 @@ export default function App() {
 
     return (
         <div className="container mx-auto p-6">
-         <BannerHead />
+         <BannerHead/>
          <MainTable data={Data}/>
         </div>
       )
