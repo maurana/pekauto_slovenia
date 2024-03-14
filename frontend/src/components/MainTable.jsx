@@ -4,7 +4,7 @@ export default function MainTable({data}) {
   return (
     <div className="mt-4 overflow-x-auto w-full">
       <Table hoverable>
-        <Table.Head>
+        <Table.Head className='text-indigo-900'>
           <Table.HeadCell>No</Table.HeadCell>
           <Table.HeadCell>Vin Number</Table.HeadCell>
           <Table.HeadCell>Created At</Table.HeadCell>

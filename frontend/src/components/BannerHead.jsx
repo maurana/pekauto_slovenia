@@ -37,7 +37,7 @@ export default function BannerHead({refresh, handleFilter, handleSubmit}) {
         </div>
         <div className="flex flex-shrink-0 items-center">
           <div className="relative">
-          <TextInput id="search" type="text" placeholder="vin number" className='mr-1' maxLength={17} onKeyPress={(event) => {if (!/[0-9]/.test(event.key)) event.preventDefault()}} onChange={(e) => {handleFilter(e.target.value)}}/>
+          <TextInput id="search" type="text" autoComplete={"off"} placeholder="vin number search.." className='mr-1' maxLength={17} onKeyPress={(event) => {if (!/[0-9]/.test(event.key)) event.preventDefault()}} onChange={(e) => {handleFilter(e.target.value)}}/>
           <button type="button" onClick={handleSubmit} className="text-white absolute end-2 bottom-1.5 bg-gray-0 hover:bg-gray-0 focus:ring-1 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-2 py-2 dark:bg-gray-0 dark:hover:bg-gray-0 dark:focus:ring-gray-800"><BsSearch color="gray"/></button>
           </div>
           <Button onClick={toggle}><BsPlusCircleDotted className="h-4 w-4 mr-1" /> Add</Button>

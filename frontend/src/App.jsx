@@ -1,6 +1,7 @@
 import React from 'react'
 import BannerHead from './components/BannerHead'
 import MainTable from './components/MainTable'
+import Footerx from './components/Footer'
 import API from './utils/Api'
 import { ToastContainer} from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
@@ -21,6 +22,7 @@ export default function App() {
          <BannerHead refresh={refresh} handleFilter={setVinFilter} handleSubmit={filt}/>
          <MainTable data={Data}/>
          <ToastContainer autoClose={3000}/>
+         <Footerx />
         </div>
     )
 }

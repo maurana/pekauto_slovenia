@@ -11,9 +11,11 @@
   },
   "dependencies": {
     "flowbite-react": "^0.7.2",
+    "framer-motion": "^11.0.13",
     "react": "^18.2.0",
     "react-datepicker": "^6.3.0",
     "react-dom": "^18.2.0",
+    "react-hook-form": "^7.51.0",
     "react-icons": "^5.0.1",
     "react-toastify": "^10.0.4"
   },
