@@ -21,7 +21,7 @@ export default function ModalForm({open, toggle, place, equipment, refresh, setC
     }
 
     const CustomInput = React.forwardRef(({ value, onClick, onChange }, ref) => (
-        <TextInput type="number" id="year" sizing="sm" onClick={onClick} ref={ref} value={value} onChange={onChange}/>
+        <TextInput type="number" id="year" sizing="sm" onClick={onClick} ref={ref} value={value} onChange={onChange} required/>
     ))
 
     return (
@@ -34,7 +34,7 @@ export default function ModalForm({open, toggle, place, equipment, refresh, setC
                     <div className="mb-2 block">
                     <Label htmlFor="equipment" value="Equipment code" />
                     </div>
-                    <Select id="equipment" sizing="sm" onChange={e => setEquipment(e.target.value)}>
+                    <Select id="equipment" sizing="sm" onChange={e => setEquipment(e.target.value)} required>
                         <option value=""></option>
                         {equipment != null ? Array.from(equipment).map((val, idx) => {
                             return (
@@ -47,7 +47,7 @@ export default function ModalForm({open, toggle, place, equipment, refresh, setC
                     <div className="mb-2 block">
                     <Label htmlFor="place" value="Place of production" />
                     </div>
-                    <Select id="place" sizing="sm" onChange={e => setPlace(e.target.value)}>
+                    <Select id="place" sizing="sm" onChange={e => setPlace(e.target.value)} required>
                         <option value=""></option>
                         {place != null ? Array.from(place).map((val, idx) => {
                             return (
@@ -77,7 +77,7 @@ export default function ModalForm({open, toggle, place, equipment, refresh, setC
                     <div className="mb-2 block">
                     <Label htmlFor="serial" value="Serial Number" />
                     </div>
-                    <TextInput id="serial" type="text" sizing="sm" maxLength={6} onChange={e => setSerial(e.target.value)} pattern="[0-9]{6}" onKeyPress={(event) => {
+                    <TextInput id="serial" type="text" sizing="sm" maxLength={6} onChange={e => setSerial(e.target.value)} pattern="[0-9]{6}" required onKeyPress={(event) => {
                         if (!/[0-9]/.test(event.key)) event.preventDefault()
                     }}/>
                 </div>
@@ -85,7 +85,7 @@ export default function ModalForm({open, toggle, place, equipment, refresh, setC
                     <div className="mb-2 block">
                     <Label htmlFor="version" value="Version" />
                     </div>
-                    <TextInput id="version" type="text" sizing="sm" maxLength={3} onChange={e => setVersion(e.target.value)} pattern="[0-9]{3}" onKeyPress={(event) => {
+                    <TextInput id="version" type="text" sizing="sm" maxLength={3} onChange={e => setVersion(e.target.value)} pattern="[0-9]{3}" required onKeyPress={(event) => {
                         if (!/[0-9]/.test(event.key)) event.preventDefault()
                     }}/>
                 </div>
