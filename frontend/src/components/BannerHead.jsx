@@ -4,7 +4,7 @@ import { BsPlusCircleDotted, BsSearch } from "react-icons/bs"
 import ModalForm from "./ModalForm"
 import API from '../utils/Api'
 
-export default function BannerHead() {
+export default function BannerHead({refresh}) {
   const [openModal, setOpenModal] = React.useState(false)
   const [Place, setPlace] = React.useState([])
   const [Equipment, setEquipment] = React.useState([])
@@ -36,13 +36,13 @@ export default function BannerHead() {
           </p>
         </div>
         <div className="flex flex-shrink-0 items-center">
-          <TextInput id="search" type="number" rightIcon={BsSearch} placeholder="vin number" className='mr-2'/>
+          <TextInput id="search" type="text" rightIcon={BsSearch} placeholder="vin number" className='mr-2' pattern="[0-9]{17}" maxLength={17} onKeyPress={(event) => {if (!/[0-9]/.test(event.key)) event.preventDefault()}}/>
           <Button onClick={toggle}><BsPlusCircleDotted className="h-4 w-4 mr-1" /> Add</Button>
         </div>
       </div>
     </Banner>
     <div>
-      <ModalForm open={openModal} toggle={toggle} place={Place} equipment={Equipment} />
+      <ModalForm open={openModal} toggle={toggle} place={Place} equipment={Equipment} refresh={refresh}/>
     </div>
     </>
   )

@@ -1,22 +1,23 @@
-import React from 'react';
+import React from 'react'
 import { Button, Select, Label, Modal, TextInput } from 'flowbite-react'
-import DatePicker from "react-datepicker";
-import API from '../utils/Api';
-import "react-datepicker/dist/react-datepicker.css";
+import DatePicker from "react-datepicker"
+import API from '../utils/Api'
+import "react-datepicker/dist/react-datepicker.css"
 import "./../style/customdatepicker.css"
 
-export default function ModalForm({open, toggle, place, equipment}) {
+export default function ModalForm({open, toggle, place, equipment, refresh, setCreated}) {
     const [Year, setYear] = React.useState(new Date())
     const [Version, setVersion] = React.useState('')
     const [Equipment, setEquipment] = React.useState('')
     const [Serial, setSerial] = React.useState('')
     const [Place, setPlace] = React.useState('')
-    const CreateVin = async (data) => await API('vin','GET', data)
+    const CreateVin = async (data) => await API('vin','POST', data)
 
-    const handleSubmit = () => {
-        let text = Version+Equipment+Year.getFullYear().toString().substr(-2)+'1'+Serial+Place
-        CreateVin({vin_number: text})
-        toggle()
+    const handleSubmit = async () => {
+        let vin = Version+Equipment+Year.getFullYear().toString().substr(-2)+'1'+Serial+Place
+        await toggle()
+        await CreateVin({vin_number: vin})
+        await refresh()
     }
 
     const CustomInput = React.forwardRef(({ value, onClick, onChange }, ref) => (
@@ -35,9 +36,9 @@ export default function ModalForm({open, toggle, place, equipment}) {
                     </div>
                     <Select id="equipment" sizing="sm" onChange={e => setEquipment(e.target.value)}>
                         <option value=""></option>
-                        {equipment != null ? equipment.map((val, idx) => {
+                        {equipment != null ? Array.from(equipment).map((val, idx) => {
                             return (
-                                <option key={idx} value={val.code}>{`${val.code}-${val.desc}`}</option>
+                                <option key={idx} value={val.code}>{`${val.code} - ${val.desc}`}</option>
                             )
                         }) : null}
                     </Select>
@@ -48,9 +49,9 @@ export default function ModalForm({open, toggle, place, equipment}) {
                     </div>
                     <Select id="place" sizing="sm" onChange={e => setPlace(e.target.value)}>
                         <option value=""></option>
-                        {place != null ? place.map((val, idx) => {
+                        {place != null ? Array.from(place).map((val, idx) => {
                             return (
-                                <option key={idx} value={val.code}>{`${val.code}-${val.state}`}</option>
+                                <option key={idx} value={val.code}>{`${val.code} - ${val.state}`}</option>
                             )
                         }) : null}
                     </Select>
@@ -77,7 +78,7 @@ export default function ModalForm({open, toggle, place, equipment}) {
                     <Label htmlFor="serial" value="Serial Number" />
                     </div>
                     <TextInput id="serial" type="text" sizing="sm" maxLength={6} onChange={e => setSerial(e.target.value)} pattern="[0-9]{6}" onKeyPress={(event) => {
-                        if (!/[0-9]{6}/.test(event.key)) event.preventDefault()
+                        if (!/[0-9]/.test(event.key)) event.preventDefault()
                     }}/>
                 </div>
                 <div>
@@ -85,7 +86,7 @@ export default function ModalForm({open, toggle, place, equipment}) {
                     <Label htmlFor="version" value="Version" />
                     </div>
                     <TextInput id="version" type="text" sizing="sm" maxLength={3} onChange={e => setVersion(e.target.value)} pattern="[0-9]{3}" onKeyPress={(event) => {
-                        if (!/[0-9]{3}/.test(event.key)) event.preventDefault()
+                        if (!/[0-9]/.test(event.key)) event.preventDefault()
                     }}/>
                 </div>
             </div>

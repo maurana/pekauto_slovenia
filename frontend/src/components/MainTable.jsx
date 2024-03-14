@@ -10,7 +10,7 @@ export default function MainTable({data}) {
           <Table.HeadCell>Created At</Table.HeadCell>
         </Table.Head>
         <Table.Body className="divide-y">
-        {data != null ? data.map((val, idx) => {
+        {data != null ? Array.from(data).map((val, idx) => {
           return (
             <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800" key={idx}>
             <Table.Cell>{idx+1}</Table.Cell>
