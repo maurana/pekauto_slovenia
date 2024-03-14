@@ -1,11 +1,11 @@
 import React from 'react'
 import { Button, Select, Label, Modal, TextInput } from 'flowbite-react'
-import DatePicker from "react-datepicker"
+import DatePicker from 'react-datepicker'
 import API from '../utils/Api'
-import "react-datepicker/dist/react-datepicker.css"
-import "./../style/customdatepicker.css"
+import 'react-datepicker/dist/react-datepicker.css'
+import './../style/customdatepicker.css'
 
-export default function ModalForm({open, toggle, place, equipment, refresh, setCreated}) {
+export default function ModalForm({open, toggle, place, equipment, refresh}) {
     const [Year, setYear] = React.useState(new Date())
     const [Version, setVersion] = React.useState('')
     const [Equipment, setEquipment] = React.useState('')

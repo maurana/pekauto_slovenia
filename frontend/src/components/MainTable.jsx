@@ -1,4 +1,4 @@
-import { Table } from 'flowbite-react';
+import { Table } from 'flowbite-react'
 
 export default function MainTable({data}) {
   return (

@@ -13,5 +13,5 @@ export default async function API(url, method, data = null) {
         return xhr.json()
     })
     .then(data => data)
-    .catch(error => console.error(error));
+    .catch(error => console.error(error))
 }

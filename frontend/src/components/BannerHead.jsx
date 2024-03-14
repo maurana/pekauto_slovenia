@@ -1,7 +1,7 @@
 import React from 'react'
 import { Banner, Button, TextInput } from 'flowbite-react'
-import { BsPlusCircleDotted, BsSearch } from "react-icons/bs"
-import ModalForm from "./ModalForm"
+import { BsPlusCircleDotted, BsSearch } from 'react-icons/bs'
+import ModalForm from './ModalForm'
 import API from '../utils/Api'
 
 export default function BannerHead({refresh, handleFilter, handleSubmit}) {

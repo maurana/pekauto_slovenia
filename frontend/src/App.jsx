@@ -1,7 +1,7 @@
-import React from "react"
-import BannerHead from "./components/BannerHead"
-import MainTable from "./components/MainTable"
-import API from "./utils/Api"
+import React from 'react'
+import BannerHead from './components/BannerHead'
+import MainTable from './components/MainTable'
+import API from './utils/Api'
 import { ToastContainer} from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
