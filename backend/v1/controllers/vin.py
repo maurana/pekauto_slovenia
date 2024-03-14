@@ -1,4 +1,3 @@
-from django.http import Http404
 from django_filters import rest_framework as filters
 from rest_framework.parsers import JSONParser
 from rest_framework.response import Response
