@@ -4,7 +4,7 @@ import { BsPlusCircleDotted, BsSearch } from "react-icons/bs"
 import ModalForm from "./ModalForm"
 import API from '../utils/Api'
 
-export default function BannerHead({refresh}) {
+export default function BannerHead({refresh, handleFilter, handleSubmit}) {
   const [openModal, setOpenModal] = React.useState(false)
   const [Place, setPlace] = React.useState([])
   const [Equipment, setEquipment] = React.useState([])
@@ -36,7 +36,12 @@ export default function BannerHead({refresh}) {
           </p>
         </div>
         <div className="flex flex-shrink-0 items-center">
-          <TextInput id="search" type="text" rightIcon={BsSearch} placeholder="vin number" className='mr-2' pattern="[0-9]{17}" maxLength={17} onKeyPress={(event) => {if (!/[0-9]/.test(event.key)) event.preventDefault()}}/>
+          <form onSubmit={handleSubmit()}> 
+              <div className="relative">
+              <TextInput id="search" type="text" placeholder="vin number" className='mr-1' pattern="[0-9]{17}" maxLength={17} onKeyPress={(event) => {if (!/[0-9]/.test(event.key)) event.preventDefault()}} onChange={(e) => {handleFilter(e.target.value)}}/>
+              <button type="submit" class="text-white absolute end-2 bottom-1.5 bg-gray-0 hover:bg-gray-0 focus:ring-1 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-2 py-2 dark:bg-gray-0 dark:hover:bg-gray-0 dark:focus:ring-gray-800"><BsSearch color="gray"/></button>
+              </div>
+          </form>
           <Button onClick={toggle}><BsPlusCircleDotted className="h-4 w-4 mr-1" /> Add</Button>
         </div>
       </div>

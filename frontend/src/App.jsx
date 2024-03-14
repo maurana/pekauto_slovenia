@@ -7,19 +7,19 @@ import 'react-toastify/dist/ReactToastify.css'
 
 export default function App() {
     const [Data, setData] = React.useState([])
+    const [VinFilter, setVinFilter] = React.useState('')
     const GetAll = async () => setData(await API('vin','GET'))
+    const refresh = () => setData(API('vin','GET'))
+    const handleFilter = (val) => setVinFilter(val)
+    const handleSubmit = () => setData(API(`vin?vin_number=${VinFilter}`,'GET'))
 
     React.useEffect(() => {
       if (Object.keys(Data).length < 1) GetAll()
     }, [Data])
 
-    const refresh = () => {
-      setData(API('vin','GET'))
-    }
-
     return (
         <div className="container mx-auto p-6">
-         <BannerHead refresh={refresh}/>
+         <BannerHead refresh={refresh} handleFilter={handleFilter} handleSubmit={handleSubmit}/>
          <MainTable data={Data}/>
          <ToastContainer autoClose={3000}/>
         </div>
