@@ -1,0 +1,110 @@
+{
+	"info": {
+		"_postman_id": "c19b8475-62b3-47d2-99e4-66e0bf0d09ac",
+		"name": "Pek_Automotive",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20653578"
+	},
+	"item": [
+		{
+			"name": "Create VIN",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"vin_number\": \"7777777\"}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/vin",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"vin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All VIN",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/vin",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"vin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filter VIN",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/vin?vin_number=666",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"vin"
+					],
+					"query": [
+						{
+							"key": "vin_number",
+							"value": "666"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
