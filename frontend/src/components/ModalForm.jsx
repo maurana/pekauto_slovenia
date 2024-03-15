@@ -72,7 +72,7 @@ export default function ModalForm({open, toggle, place, equipment, refresh}) {
                     </div>       
                     <div className="customDatePickerWidth">
                         <DatePicker
-                        isClearable={true}
+                        //isClearable={true}
                         selected={Year}
                         onChange={(val) => setYear(val)}
                         customInput={<CustomInput/>}
