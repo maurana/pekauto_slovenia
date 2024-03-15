@@ -1,13 +1,18 @@
-# Fullstack Apps
+# Pek Automotive Slovenia
+> [!IMPORTANT]\
+> ALL TECHNOLOGY STACK :
 <p align="left">
-<a><img src="https://img.shields.io/badge/v20.11.0-%40node-blueviolet" alt="NodeJs"></a>
-<a><img src="https://img.shields.io/badge/v3.14.0-%40djangorestframework-important" alt="Django Rest Framework"></a>
-<a><img src="https://img.shields.io/badge/v5.0.3-%40django-yellowgreen" alt="Django"></a>
+  <a><img src="https://img.shields.io/badge/v20.11.0-node-importantyellow?logo=nodedotjs" alt="NodeJs"></a>
+  <a><img src="https://img.shields.io/badge/v18.2.0-react-blue?logo=react" alt="ReactJs"></a>
+  <a><img src="https://img.shields.io/badge/v5.1.4-vite-blueviolet?logo=vite" alt="ViteJs"></a>
+  <a><img src="https://img.shields.io/badge/v3.4.1-tailwind-yellow?logo=tailwindcss" alt="TailwindCss"></a>
+  <a><img src="https://img.shields.io/badge/v3.4.1-djangorestframework-red?logo=python" alt="DjangoRestFramework"></a>
+  <a><img src="https://img.shields.io/badge/v3.4.1-django-teal?logo=django" alt="Django"></a>
 </p>
 
 > Installation
 
 Frontend
 ```bash
-> npm install
+> npm install or yarn add
 ```
