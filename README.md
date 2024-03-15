@@ -1,4 +1,4 @@
-# Pek Automotive Slovenia
+# Pek Automotive ![Slovenia](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/36/country-4x3/si.png "Slovenia")
 > [!IMPORTANT]\
 > ALL TECHNOLOGY STACK :
 <p align="left">
