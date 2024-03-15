@@ -23,6 +23,18 @@ Backend
 > python3 -m venv venv
 > source venv/bin/activate  # On Windows use `venv\Scripts\activate`
 > (venv) pip install -r requirements.txt
-# Sync Database
+# Sync Database, before migration set up the database connection in .env file
 > (venv) python manage.py migrate
+```
+
+> Running Local Development
+
+Frontend
+```bash
+> npm run dev OR yarn run dev
+```
+
+Backend
+```bash
+> (venv) python manage.py runserver
 ```
