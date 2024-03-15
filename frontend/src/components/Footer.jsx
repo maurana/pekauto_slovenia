@@ -30,7 +30,7 @@ export default function Footerx() {
                   </Footer.LinkGroup>
                 </div>
                 <div>
-                  <Footer.Title title="Others" />
+                  <Footer.Title title="DevOps" />
                   <Footer.LinkGroup col>
                     <Footer.Link href="https://www.mysql.com/"><Footer.Brand src="https://upload.wikimedia.org/wikipedia/labs/8/8e/Mysql_logo.png" size="lg"/></Footer.Link>
                     <Footer.Link href="https://www.docker.com/"><Footer.Brand src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTo8moNximUowV0NdyJZpOyJfYvYXKlqpwJ4rVQ50f6vVWyjS9ahXEK3fSZVsQOBgLqVQ&usqp=CAU" size="lg"/></Footer.Link>
