@@ -11,12 +11,6 @@
 </p>
 
 > Installation
-
-Frontend
-```bash
-> npm install OR yarn add
-```
-
 Backend
 ```bash
 # Create a virtual environment to isolate our package dependencies locally
@@ -26,16 +20,18 @@ Backend
 # Sync Database, before migration set up the database connection in .env file
 > (venv) python manage.py migrate
 ```
-
-> Running Local Development
-
 Frontend
 ```bash
-> npm run dev OR yarn run dev
+> npm install OR yarn add
 ```
 
+> Running Local Development
 Backend
 ```bash
 > (venv) python manage.py runserver
+```
+Frontend
+```bash
+> npm run dev OR yarn run dev
 ```
 Open a browser and access the app at http://localhost:5173/
