@@ -38,3 +38,4 @@ Backend
 ```bash
 > (venv) python manage.py runserver
 ```
+Open a browser and access the app at http://localhost:5173/
