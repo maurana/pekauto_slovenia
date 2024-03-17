@@ -69,8 +69,8 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'backend.urls'
 
 CORS_ORIGIN_ALLOW_ALL = False
-CORS_ALLOWED_ORIGINS = ["http://localhost:5173"]
-CSRF_TRUSTED_ORIGINS = ["http://localhost:5173"]
+CORS_ALLOWED_ORIGINS = ["http://localhost:2024"]
+CSRF_TRUSTED_ORIGINS = ["http://localhost:2024"]
 CORS_URLS_REGEX = r"^/api/.*$"
 CORS_ALLOW_METHODS = (
     "DELETE",

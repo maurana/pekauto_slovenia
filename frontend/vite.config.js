@@ -8,6 +8,6 @@ export default defineConfig({
     port: 5173,
   },
   preview: {
-    port: 5173,
+    port: 2024,
   },
 })

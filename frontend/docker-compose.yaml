@@ -1,11 +1,15 @@
-version: '3.8'
+version: '3'
 services:
-  frontend:
-    image: frontend:1.0
+  web:
+    image: frontend
     build: 
       context: .
       dockerfile: Dockerfile
     container_name: frontend
     ports:
-      - "5173:5173"
+      - "2024:2024"
+    expose:
+      - "2024"
+    env_file:
+      - .env
     
