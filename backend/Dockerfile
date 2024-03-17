@@ -1,5 +1,5 @@
 # Use an official Python runtime as a parent image
-FROM python:3.10-alpine
+FROM python:3.10
 
 # Set environment variables
 ENV PYTHONDONTWRITEBYTECODE 1
@@ -18,11 +18,11 @@ RUN pip install -r requirements.txt
 # Copy the project code into the container
 COPY . /backend/
 
-VOLUME /backend
+# VOLUME /backend
 
-# Expose the port server is running on
-EXPOSE 8000
+# # Expose the port server is running on
+# EXPOSE 8000
 
-# Start the server
-CMD python manage.py makemigrations && python manage.py migrate && python manage.py runserver 0.0.0.0:8000
-# CMD ["%%CMD%%"]
+# # Start the server
+# CMD python manage.py makemigrations v1 && python manage.py migrate && python manage.py runserver 0.0.0.0:8000
+# # CMD ["%%CMD%%"]
