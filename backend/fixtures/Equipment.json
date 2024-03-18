@@ -1,0 +1,44 @@
+[
+    {
+        "model": "v1.equipment",
+        "pk": 1,
+        "fields": {
+            "code": "000", "desc": "Base platform"
+        }
+    },
+    {
+        "model": "v1.equipment",
+        "pk": 2,
+        "fields": {
+            "code": "014", "desc": "Bumper"
+        }
+    },
+    {
+        "model": "v1.equipment",
+        "pk": 3,
+        "fields": {
+            "code": "037", "desc": "Drum Mulcher"
+        }
+    },
+    {
+        "model": "v1.equipment",
+        "pk": 4,
+        "fields": {
+            "code": "036", "desc": "Side Trimmer"
+        }
+    },
+    {
+        "model": "v1.equipment",
+        "pk": 5,
+        "fields": {
+            "code": "038", "desc": "Sprayer"
+        }
+    },
+    {
+        "model": "v1.equipment",
+        "pk": 6,
+        "fields": {
+            "code": "027", "desc": "Lawn Mower"
+        }
+    }
+]

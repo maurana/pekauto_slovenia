@@ -1,5 +1,5 @@
-import { Footer, Avatar } from 'flowbite-react';
-import { BsLinkedin, BsGithub, BsInstagram} from 'react-icons/bs';
+import { Footer, Avatar } from 'flowbite-react'
+import { BsLinkedin, BsGithub, BsInstagram} from 'react-icons/bs'
 
 export default function Footerx() {
     return (
@@ -8,7 +8,7 @@ export default function Footerx() {
             <div className="grid w-full justify-between sm:flex sm:justify-between md:flex md:grid-cols-1">
               <div>
                 <Footer.Brand
-                  href="https://pekauto.com"
+                  href="https://github.com/maurana/pekauto_slovenia"
                   src="/pekauto.png"
                   alt="Pekauto logo"
                   name="Pek Automotive"
@@ -49,5 +49,5 @@ export default function Footerx() {
             </div>
           </div>
         </Footer>
-      );
+      )
 }

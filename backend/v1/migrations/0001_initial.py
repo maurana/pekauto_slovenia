@@ -37,7 +37,7 @@ class Migration(migrations.Migration):
             name='Vin',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('vin_number', models.CharField(max_length=17)),
+                ('vin_number', models.CharField(max_length=17, unique=True)),
                 ('created_at', models.DateTimeField(auto_now_add=True)),
                 ('updated_at', models.DateTimeField(blank=True, null=True)),
             ],

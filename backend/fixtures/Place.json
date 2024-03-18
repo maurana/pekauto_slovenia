@@ -1,0 +1,23 @@
+[
+    {
+        "model": "v1.place",
+        "pk": 1,
+        "fields": {
+            "code": "00", "state": "Slovenia"
+        }
+    },
+    {
+        "model": "v1.place",
+        "pk": 2,
+        "fields": {
+            "code": "01", "state": "Turkey"
+        }
+    },
+    {
+        "model": "v1.place",
+        "pk": 3,
+        "fields": {
+            "code": "03", "state": "Indonesia"
+        }
+    }
+]

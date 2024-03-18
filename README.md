@@ -8,6 +8,9 @@
   <a><img src="https://img.shields.io/badge/v3.4.1-tailwind-yellow?logo=tailwindcss" alt="TailwindCss"></a>
   <a><img src="https://img.shields.io/badge/v3.14.0-restframework-red?logo=python" alt="DjangoRestFramework"></a>
   <a><img src="https://img.shields.io/badge/v5.0.3-django-teal?logo=django" alt="Django"></a>
+  <a><img src="https://img.shields.io/badge/v1.23.1-nginx-green?logo=nginx" alt="Nginx"></a>
+  <a><img src="https://img.shields.io/badge/v25.0.4-docker-lightblue?logo=docker" alt="Docker"></a>
+  <a><img src="https://img.shields.io/badge/v2024.1-kalilinux-purple?logo=linux" alt="Kali Linux OS"></a>
 </p>
 
 > Installation
@@ -20,6 +23,8 @@ Backend
 > (venv) pip install -r requirements.txt
 # Sync Database, before migration set up the database connection in .env file
 > (venv) python manage.py migrate
+# Seeding data
+> (venv) python manage.py seed
 ```
 Frontend
 ```bash
@@ -36,4 +41,21 @@ Frontend
 ```bash
 > npm run dev OR yarn run dev
 ```
-Open a browser and access the app at http://localhost:5173/
+
+> Production On Docker
+
+Build Up
+```bash
+> sudo docker compose build
+```
+Running
+```bash
+> sudo docker compose up
+```
+
+Build Up and Running
+```bash
+> sudo docker compose up --build
+```
+
+Open a browser and access the fullstack app at http://localhost:2024/

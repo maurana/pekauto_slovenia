@@ -136,7 +136,7 @@ export default function ModalForm({open, toggle, place, equipment, refresh}) {
                     )}
                     </AnimatePresence>
                     </div>
-                    <TextInput {...register("serial", validation(true,6,6))} name="serial" id="serial" type="text" sizing="sm" maxLength={6} onKeyPress={(event) => {
+                    <TextInput {...register("serial", validation(true,6,6))} name="serial" id="serial" type="text" sizing="sm" autoComplete="off" maxLength={6} onKeyPress={(event) => {
                         if (!/[0-9]/.test(event.key)) event.preventDefault()
                     }}/>
                 </div>
@@ -152,7 +152,7 @@ export default function ModalForm({open, toggle, place, equipment, refresh}) {
                     )}
                     </AnimatePresence>
                     </div>
-                    <TextInput {...register("version", validation(true,3,3))} name="version" id="version" type="text" sizing="sm" maxLength={3} onKeyPress={(event) => {
+                    <TextInput {...register("version", validation(true,3,3))} name="version" id="version" type="text" sizing="sm" autoComplete="off" maxLength={3} onKeyPress={(event) => {
                         if (!/[0-9]/.test(event.key)) event.preventDefault()
                     }}/>
                 </div>
