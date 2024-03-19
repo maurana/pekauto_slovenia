@@ -63,4 +63,11 @@ Build and Running
 > docker compose up --build
 ```
 
+> Pull from Docker Hub
+
+```bash
+> docker pull maurana/pekauto_backend-api
+> docker pull maurana/pekauto_frontend
+```
+
 Open a browser and access the fullstack app at http://localhost:2024/
