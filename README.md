@@ -24,7 +24,7 @@ Backend
 # Sync Database, before migration set up the database connection in .env file
 > (venv) python manage.py migrate
 # Seeding data
-> (venv) python manage.py seed
+> (venv) python manage.py loaddata fixtures/*.json
 ```
 Frontend
 ```bash
