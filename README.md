@@ -44,7 +44,7 @@ Frontend
 
 > Production On Docker
 
-Build Up
+Build
 ```bash
 > docker compose build
 ```
@@ -58,7 +58,7 @@ Stoping
 > docker compose down
 ```
 
-Build Up and Running
+Build and Running
 ```bash
 > docker compose up --build
 ```
