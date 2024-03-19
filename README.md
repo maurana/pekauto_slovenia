@@ -10,7 +10,7 @@
   <a><img src="https://img.shields.io/badge/v5.0.3-django-teal?logo=django" alt="Django"></a>
   <a><img src="https://img.shields.io/badge/v1.23.1-nginx-green?logo=nginx" alt="Nginx"></a>
   <a><img src="https://img.shields.io/badge/v25.0.4-docker-lightblue?logo=docker" alt="Docker"></a>
-  <a><img src="https://img.shields.io/badge/v2024.1-kalilinux-purple?logo=linux" alt="Kali Linux OS"></a>
+  <a><img src="https://img.shields.io/badge/v2024.1-kalilinux-purple?logo=kalilinux" alt="Kali Linux OS"></a>
 </p>
 
 > Installation
@@ -46,16 +46,21 @@ Frontend
 
 Build Up
 ```bash
-> sudo docker compose build
+> docker compose build
 ```
 Running
 ```bash
-> sudo docker compose up
+> docker compose up
+```
+
+Stoping
+```bash
+> docker compose down
 ```
 
 Build Up and Running
 ```bash
-> sudo docker compose up --build
+> docker compose up --build
 ```
 
 Open a browser and access the fullstack app at http://localhost:2024/
